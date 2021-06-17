@@ -1,0 +1,17 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics
+server:
+  port: 8082
+spring:
+  application:
+    name: ms-customers
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 166895264122-i2po6ejvag66lb1e4nsl6jcqnlic5kf2.apps.googleusercontent.com
+            client-secret: 3RfnUnWhKAX-3WDP6hbzg8If

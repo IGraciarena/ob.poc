@@ -1,0 +1,30 @@
+server:
+  port: 8555
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: ms-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: ms-products
+          uri: lb://ms-products
+          predicates:
+            - Path=/products/**
+            - Path=/categories/**
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
